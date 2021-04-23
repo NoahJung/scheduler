@@ -3,9 +3,15 @@ This project is a React application that allows users to book and cancel intervi
 
 ## Screenshots
 !["Dashboard"](https://github.com/NoahJung/scheduler/blob/master/docs/screenshot1.png)
-!["Create & Edit"](https://github.com/NoahJung/scheduler/blob/master/docs/screenshot1.png)
+!["Create & Edit"](https://github.com/NoahJung/scheduler/blob/master/docs/screenshot2.png)
 
 ## Dependencies
+  - react 16.9.0
+  - react-dom 16.9.0
+  - react-scripts 3.0.0
+  - axios
+  - classnames
+  - normalize.css
 
 ## Setup
 
