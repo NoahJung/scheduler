@@ -1,11 +1,18 @@
 # Interview Scheduler
+This project is a React application that allows users to book and cancel interviews.
+
+## Screenshots
+!["Dashboard"](https://github.com/NoahJung/scheduler/blob/master/docs/screenshot1.png)
+!["Create & Edit"](https://github.com/NoahJung/scheduler/blob/master/docs/screenshot1.png)
+
+## Dependencies
 
 ## Setup
 
 Install dependencies with `npm install`.
 
 ## Running Webpack Development Server
-
+after install scheduler-api : https://github.com/lighthouse-labs/scheduler-api
 ```sh
 npm start
 ```
