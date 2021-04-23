@@ -19,7 +19,7 @@ export function getAppointmentsForDay(state, day) {
 }
 
 export function getInterview(state, interview) {
-  const result ={};
+  const result = {};
 
   if (interview === null) {
     return null;
@@ -50,7 +50,6 @@ export function getInterviewersForDay(state, day) {
     if (obj !== null) {
       result.push(obj);
     }
-    
   }
   
   return result;

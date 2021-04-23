@@ -8,7 +8,6 @@ import Status from "components/Appointment/Status";
 import Confirm from "components/Appointment/Confirm";
 import Error from "components/Appointment/Error";
 import useVisualMode from "hooks/useVisualMode";
-
 import "components/Appointment/styles.scss";
 
 export default function Appointment(props) {
@@ -21,7 +20,7 @@ export default function Appointment(props) {
   const CONFIRM = "CONFIRM";
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
-
+  const ERROR_SUBMIT = "ERROR_SUBMIT";
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
@@ -29,7 +28,8 @@ export default function Appointment(props) {
 
   function save(name, interviewer) {
 
-    if (!name || !interviewer) {
+    if (!name || !interviewer) {     // prevent saving without name or interviewer setting
+      transition(ERROR_SUBMIT)
       return 
     }
 
@@ -114,6 +114,13 @@ export default function Appointment(props) {
         <Error 
           message="Oops! There was an error while deleting."
           onClose={back}
+      />
+      ) }
+
+      {mode === ERROR_SUBMIT && (
+        <Error 
+          message="Please check Your name and interviewer setting."
+          onClose={() => back()}
       />
       ) }
 

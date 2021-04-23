@@ -25,6 +25,7 @@ export default function useApplicationData() {
       })
     }, []);
 
+  // this function for finding day object to update spots
   const findDayObj = (id) => {
     let theDay = {}
     const days = [...state.days];
@@ -35,13 +36,11 @@ export default function useApplicationData() {
         }
       }
     }
-    return theDay;
+    return theDay;    // return day obj
   }
 
   
   const bookInterview = (id, interview) => {
-
-    const interviewStatus = {...state.appointments}[id].interview
 
     const appointment = {
       ...state.appointments[id],
@@ -54,7 +53,9 @@ export default function useApplicationData() {
     };
 
     const dayObj = findDayObj(id);
-    
+
+    // preventing spots minus when user "edit" the appointment 
+    const interviewStatus = {...state.appointments}[id].interview
     const newSpots = interviewStatus === null ? dayObj.spots - 1 : dayObj.spots   
 
     const day = {
@@ -63,7 +64,6 @@ export default function useApplicationData() {
     };
 
     const days = [...state.days].map(d => d.name === dayObj.name ? day : d);
-
 
     return axios.put(`/api/appointments/${id}`, { interview } )
     .then((response) => {setState({ ...state, appointments, days});

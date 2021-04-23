@@ -4,7 +4,6 @@ import useApplicationData from "hooks/useApplicationData"
 import DayList from "components/DayList";
 import Appointment from "components/Appointment";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
-
 import "components/Application.scss";
 
 export default function Application(props) {
@@ -19,7 +18,6 @@ export default function Application(props) {
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const interviewers = getInterviewersForDay(state, state.day);
-  
 
   const displaySchedule = dailyAppointments.map(appointment => {
     return (
