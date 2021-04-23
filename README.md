@@ -2,7 +2,10 @@
 This project is a React application that allows users to book and cancel interviews.
 
 ## Screenshots
+Appointment dashboard
 !["Dashboard"](https://github.com/NoahJung/scheduler/blob/master/docs/screenshot1.png)
+
+Appointment Creating & editing
 !["Create & Edit"](https://github.com/NoahJung/scheduler/blob/master/docs/screenshot2.png)
 
 ## Dependencies
